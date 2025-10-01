@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4f4b2d698ea1ec71d612f3087c0148a3 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+    <script src="https://cdn.jsdelivr.net/gh/python-visualization/folium@master/folium/templates/leaflet_heat.min.js"></script>
+</head>
+<body>
+    
+    
+<div style="
+     position: fixed; 
+     bottom: 30px; left: 30px; z-index: 9999; 
+     background: white; padding: 10px 14px; 
+     border: 1px solid #ccc; border-radius: 8px;
+     box-shadow: 0 2px 8px rgba(0,0,0,.15);
+     font-family: sans-serif; font-size: 12px; line-height:1.3;">
+  <div style="font-weight:700; margin-bottom:6px;">Sales Heatmap</div>
+  <div>Intensity and circle size reflect the number of sales.</div>
+  <div style="margin-top:6px; color:#666;">
+    Included: Malaysia, Pakistan, Thailand, Vietnam, Germany, United Kingdom, Brazil,<br>
+    and regional aggregates: Asia (Others), Europe (Others), Africa (Others), South America (Others), Global (Others).
+  </div>
+</div>
+    
+            <div class="folium-map" id="map_4f4b2d698ea1ec71d612f3087c0148a3" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4f4b2d698ea1ec71d612f3087c0148a3 = L.map(
+                "map_4f4b2d698ea1ec71d612f3087c0148a3",
+                {
+                    center: [15.0, 10.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 2,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1b839708b53de0183b4f02e1da4dc5f7 = L.tileLayer(
+                "https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"http://cartodb.com/attributions\"\u003eCartoDB\u003c/a\u003e, CartoDB \u003ca href =\"http://cartodb.com/attributions\"\u003eattributions\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+            var heat_map_e91b1f9c79fe603f2a5ef6f3663cb3f3 = L.heatLayer(
+                [[4.2105, 101.9758, 565.0], [30.3753, 69.3451, 364.0], [15.87, 100.9925, 69.0], [14.0583, 108.2772, 7.0], [51.1657, 10.4515, 10.0], [55.3781, -3.436, 21.0], [-14.235, -51.9253, 15.0], [30.0, 100.0, 75.0], [54.0, 15.0, 39.0], [0.0, 20.0, 30.0], [-15.0, -60.0, 10.0], [0.0, 0.0, 3.0]],
+                {"blur": 20, "maxZoom": 4, "minOpacity": 0.5, "radius": 25}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+            var circle_marker_712dfa82875e2cf730cddf2fc1d12f78 = L.circleMarker(
+                [4.2105, 101.9758],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 23.769728648009426, "stroke": true, "weight": 1}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+        var popup_90424fee4106fea8c1cf51f2b452e66a = L.popup({"maxWidth": 280});
+
+        
+            var html_1950014f5d150f89b811df27562c884b = $(`<div id="html_1950014f5d150f89b811df27562c884b" style="width: 100.0%; height: 100.0%;"><b>Malaysia</b><br>Region: Asia<br>Sales: 565</div>`)[0];
+            popup_90424fee4106fea8c1cf51f2b452e66a.setContent(html_1950014f5d150f89b811df27562c884b);
+        
+
+        circle_marker_712dfa82875e2cf730cddf2fc1d12f78.bindPopup(popup_90424fee4106fea8c1cf51f2b452e66a)
+        ;
+
+        
+    
+    
+            circle_marker_712dfa82875e2cf730cddf2fc1d12f78.bindTooltip(
+                `<div>
+                     Malaysia — 565 sales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_154818abf81d42dd321121fcfbefd158 = L.circleMarker(
+                [30.3753, 69.3451],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.078784028338912, "stroke": true, "weight": 1}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+        var popup_2219c9970ed6b12195d6ecc4b32cf39f = L.popup({"maxWidth": 280});
+
+        
+            var html_d642bf6a46a2e8852555aaf1291ad824 = $(`<div id="html_d642bf6a46a2e8852555aaf1291ad824" style="width: 100.0%; height: 100.0%;"><b>Pakistan</b><br>Region: Asia<br>Sales: 364</div>`)[0];
+            popup_2219c9970ed6b12195d6ecc4b32cf39f.setContent(html_d642bf6a46a2e8852555aaf1291ad824);
+        
+
+        circle_marker_154818abf81d42dd321121fcfbefd158.bindPopup(popup_2219c9970ed6b12195d6ecc4b32cf39f)
+        ;
+
+        
+    
+    
+            circle_marker_154818abf81d42dd321121fcfbefd158.bindTooltip(
+                `<div>
+                     Pakistan — 364 sales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8e9acee76e8a3a82edc3391ea954d48e = L.circleMarker(
+                [15.87, 100.9925],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.306623862918075, "stroke": true, "weight": 1}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+        var popup_c4527fadfd7e801871e83810d9fc19eb = L.popup({"maxWidth": 280});
+
+        
+            var html_7466626fd041e742361554b8084bc54d = $(`<div id="html_7466626fd041e742361554b8084bc54d" style="width: 100.0%; height: 100.0%;"><b>Thailand</b><br>Region: Asia<br>Sales: 69</div>`)[0];
+            popup_c4527fadfd7e801871e83810d9fc19eb.setContent(html_7466626fd041e742361554b8084bc54d);
+        
+
+        circle_marker_8e9acee76e8a3a82edc3391ea954d48e.bindPopup(popup_c4527fadfd7e801871e83810d9fc19eb)
+        ;
+
+        
+    
+    
+            circle_marker_8e9acee76e8a3a82edc3391ea954d48e.bindTooltip(
+                `<div>
+                     Thailand — 69 sales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_59ccb73a3628d309456a43ab2a2c27d0 = L.circleMarker(
+                [14.0583, 108.2772],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+        var popup_12a3a855d696119bdb370604f0940c16 = L.popup({"maxWidth": 280});
+
+        
+            var html_31b260202b16612fc849291ead95603c = $(`<div id="html_31b260202b16612fc849291ead95603c" style="width: 100.0%; height: 100.0%;"><b>Vietnam</b><br>Region: Asia<br>Sales: 7</div>`)[0];
+            popup_12a3a855d696119bdb370604f0940c16.setContent(html_31b260202b16612fc849291ead95603c);
+        
+
+        circle_marker_59ccb73a3628d309456a43ab2a2c27d0.bindPopup(popup_12a3a855d696119bdb370604f0940c16)
+        ;
+
+        
+    
+    
+            circle_marker_59ccb73a3628d309456a43ab2a2c27d0.bindTooltip(
+                `<div>
+                     Vietnam — 7 sales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_575b0cad8eb570492856658e92de9517 = L.circleMarker(
+                [51.1657, 10.4515],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+        var popup_f0db244c9289136966121d4455149e1f = L.popup({"maxWidth": 280});
+
+        
+            var html_f83bac1afcac128fae2e1cec83ec4477 = $(`<div id="html_f83bac1afcac128fae2e1cec83ec4477" style="width: 100.0%; height: 100.0%;"><b>Germany</b><br>Region: Europe<br>Sales: 10</div>`)[0];
+            popup_f0db244c9289136966121d4455149e1f.setContent(html_f83bac1afcac128fae2e1cec83ec4477);
+        
+
+        circle_marker_575b0cad8eb570492856658e92de9517.bindPopup(popup_f0db244c9289136966121d4455149e1f)
+        ;
+
+        
+    
+    
+            circle_marker_575b0cad8eb570492856658e92de9517.bindTooltip(
+                `<div>
+                     Germany — 10 sales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0e326c20cc1cf23c7ed7c4f70dde489f = L.circleMarker(
+                [55.3781, -3.436],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+        var popup_0a32514b30c9c741793f01ea586a6597 = L.popup({"maxWidth": 280});
+
+        
+            var html_6f7cc8311472551d4a0254834d00ccf1 = $(`<div id="html_6f7cc8311472551d4a0254834d00ccf1" style="width: 100.0%; height: 100.0%;"><b>United Kingdom</b><br>Region: Europe<br>Sales: 21</div>`)[0];
+            popup_0a32514b30c9c741793f01ea586a6597.setContent(html_6f7cc8311472551d4a0254834d00ccf1);
+        
+
+        circle_marker_0e326c20cc1cf23c7ed7c4f70dde489f.bindPopup(popup_0a32514b30c9c741793f01ea586a6597)
+        ;
+
+        
+    
+    
+            circle_marker_0e326c20cc1cf23c7ed7c4f70dde489f.bindTooltip(
+                `<div>
+                     United Kingdom — 21 sales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ac0ae46a754d547674a56cd06def0461 = L.circleMarker(
+                [-14.235, -51.9253],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+        var popup_b5b9a56aa85b57652c06cf4e5cc4a255 = L.popup({"maxWidth": 280});
+
+        
+            var html_8dc3e739a844857666fd0b35cbc0673d = $(`<div id="html_8dc3e739a844857666fd0b35cbc0673d" style="width: 100.0%; height: 100.0%;"><b>Brazil</b><br>Region: South America<br>Sales: 15</div>`)[0];
+            popup_b5b9a56aa85b57652c06cf4e5cc4a255.setContent(html_8dc3e739a844857666fd0b35cbc0673d);
+        
+
+        circle_marker_ac0ae46a754d547674a56cd06def0461.bindPopup(popup_b5b9a56aa85b57652c06cf4e5cc4a255)
+        ;
+
+        
+    
+    
+            circle_marker_ac0ae46a754d547674a56cd06def0461.bindTooltip(
+                `<div>
+                     Brazil — 15 sales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ed5cc898ce8df8bbda490a7c77191734 = L.circleMarker(
+                [30.0, 100.0],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.660254037844387, "stroke": true, "weight": 1}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+        var popup_8772290602b2c38430c3110c72f95514 = L.popup({"maxWidth": 280});
+
+        
+            var html_0efe5257ac6d561ef7b3e53889c68ec1 = $(`<div id="html_0efe5257ac6d561ef7b3e53889c68ec1" style="width: 100.0%; height: 100.0%;"><b>Asia (Others)</b><br>Region: Asia<br>Sales: 75</div>`)[0];
+            popup_8772290602b2c38430c3110c72f95514.setContent(html_0efe5257ac6d561ef7b3e53889c68ec1);
+        
+
+        circle_marker_ed5cc898ce8df8bbda490a7c77191734.bindPopup(popup_8772290602b2c38430c3110c72f95514)
+        ;
+
+        
+    
+    
+            circle_marker_ed5cc898ce8df8bbda490a7c77191734.bindTooltip(
+                `<div>
+                     Asia (Others) — 75 sales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c07a24c801c2213f3b6481ec84e055b9 = L.circleMarker(
+                [54.0, 15.0],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.244997998398398, "stroke": true, "weight": 1}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+        var popup_86883cd76fa231c50296bfc615d33b93 = L.popup({"maxWidth": 280});
+
+        
+            var html_edde97d5d21a5b3149675e801308c97e = $(`<div id="html_edde97d5d21a5b3149675e801308c97e" style="width: 100.0%; height: 100.0%;"><b>Europe (Others)</b><br>Region: Europe<br>Sales: 39</div>`)[0];
+            popup_86883cd76fa231c50296bfc615d33b93.setContent(html_edde97d5d21a5b3149675e801308c97e);
+        
+
+        circle_marker_c07a24c801c2213f3b6481ec84e055b9.bindPopup(popup_86883cd76fa231c50296bfc615d33b93)
+        ;
+
+        
+    
+    
+            circle_marker_c07a24c801c2213f3b6481ec84e055b9.bindTooltip(
+                `<div>
+                     Europe (Others) — 39 sales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_69f7912c3f85715058bb35460c5a0b5a = L.circleMarker(
+                [0.0, 20.0],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.477225575051661, "stroke": true, "weight": 1}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+        var popup_34eb9aed12507f01b5ab7581b8041779 = L.popup({"maxWidth": 280});
+
+        
+            var html_6cad89ff45d964dee106ac867d54dffe = $(`<div id="html_6cad89ff45d964dee106ac867d54dffe" style="width: 100.0%; height: 100.0%;"><b>Africa (Others)</b><br>Region: Africa<br>Sales: 30</div>`)[0];
+            popup_34eb9aed12507f01b5ab7581b8041779.setContent(html_6cad89ff45d964dee106ac867d54dffe);
+        
+
+        circle_marker_69f7912c3f85715058bb35460c5a0b5a.bindPopup(popup_34eb9aed12507f01b5ab7581b8041779)
+        ;
+
+        
+    
+    
+            circle_marker_69f7912c3f85715058bb35460c5a0b5a.bindTooltip(
+                `<div>
+                     Africa (Others) — 30 sales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_111029b2f08a286eac7bcf4209a2d10c = L.circleMarker(
+                [-15.0, -60.0],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+        var popup_0ceeaabc28078862555c2906f83ba940 = L.popup({"maxWidth": 280});
+
+        
+            var html_ada0c3ce82d92dddb4231b884ca1f4ea = $(`<div id="html_ada0c3ce82d92dddb4231b884ca1f4ea" style="width: 100.0%; height: 100.0%;"><b>South America (Others)</b><br>Region: South America<br>Sales: 10</div>`)[0];
+            popup_0ceeaabc28078862555c2906f83ba940.setContent(html_ada0c3ce82d92dddb4231b884ca1f4ea);
+        
+
+        circle_marker_111029b2f08a286eac7bcf4209a2d10c.bindPopup(popup_0ceeaabc28078862555c2906f83ba940)
+        ;
+
+        
+    
+    
+            circle_marker_111029b2f08a286eac7bcf4209a2d10c.bindTooltip(
+                `<div>
+                     South America (Others) — 10 sales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c24e4af1db8eb7004caee674857ea33f = L.circleMarker(
+                [0.0, 0.0],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#3388ff", "fillOpacity": 0.75, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(map_4f4b2d698ea1ec71d612f3087c0148a3);
+        
+    
+        var popup_9f94b06f65297886dd377b7b9a79a829 = L.popup({"maxWidth": 280});
+
+        
+            var html_7651be0b4593b530cc4bfd54945d1140 = $(`<div id="html_7651be0b4593b530cc4bfd54945d1140" style="width: 100.0%; height: 100.0%;"><b>Global (Others)</b><br>Region: Global<br>Sales: 3</div>`)[0];
+            popup_9f94b06f65297886dd377b7b9a79a829.setContent(html_7651be0b4593b530cc4bfd54945d1140);
+        
+
+        circle_marker_c24e4af1db8eb7004caee674857ea33f.bindPopup(popup_9f94b06f65297886dd377b7b9a79a829)
+        ;
+
+        
+    
+    
+            circle_marker_c24e4af1db8eb7004caee674857ea33f.bindTooltip(
+                `<div>
+                     Global (Others) — 3 sales
+                 </div>`,
+                {"sticky": true}
+            );
+        
+</script>
+</html>
